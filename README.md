@@ -50,6 +50,17 @@ npm run dev
 
 The API will be available at [http://localhost:3000](http://localhost:3000).
 
+### 6. Generating a secure JWT_SECRET for your .env file
+Instead of using "supersecretjwtkey", it's best to use a strong, randomly generated string. You can generate one quickly in your terminal using Node.js:
+
+bash
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+Or using openssl if you have it installed:
+
+bash
+openssl rand -hex 32
+Copy the output and paste it into your .env file
+
 ## Scripts
 - `npm run dev` - Starts the development server with hot-reload (`tsx watch`)
 - `npm run build` - Builds the project using TypeScript (`tsc`)
